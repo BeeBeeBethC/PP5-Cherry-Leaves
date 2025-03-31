@@ -1,0 +1,5 @@
+Metric,Value
+Training Loss,0.0319
+Training Accuracy,0.9949
+Test Loss,0.0448
+Test Accuracy,0.9905
