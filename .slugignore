@@ -1,16 +1,23 @@
-# Compiled Python files
+# Development and training files
+jupyter_notebooks/
+*.ipynb
 __pycache__/
 *.pyc
 
-# Data
-data/
-datasets/
-*.csv
+# Large datasets and images
+inputs/
+outputs/v13/
+outputs/training_plots/
+outputs/*.h5
+outputs/*.keras
+outputs/*.csv
+outputs/*.png
+outputs/*.pkl
 
-# Git & build artifacts
+# Version control
 .git/
 .gitignore
 
-# Jupyter notebooks
-notebooks/
-*.ipynb
+# IDE and environment
+.python-version
+.devcontainer/
