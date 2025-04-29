@@ -1,1 +1,2 @@
-web: sh setup.sh && streamlit run multipage-mildew-app.py
+web: sh setup.sh && streamlit run multipage-mildew-app.py --server.port=$PORT --server.address=0.0.0.0
+
