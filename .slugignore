@@ -5,14 +5,19 @@ __pycache__/
 *.pyc
 
 # Large datasets and images
-inputs/
-outputs/v13/
 outputs/training_plots/
 outputs/*.h5
 outputs/*.keras
 outputs/*.csv
 outputs/*.png
 outputs/*.pkl
+inputs/leaves_dataset/cherry-leaves/resized_images/healthy
+inputs/leaves_dataset/cherry-leaves/resized_images/powdery_mildew
+inputs/leaves_dataset/cherry-leaves/processed_images/healthy
+inputs/leaves_dataset/cherry-leaves/processed_images/powdery_mildew
+inputs/leaves_dataset/cherry-leaves/processed_images/test
+inputs/leaves_dataset/cherry-leaves/processed_images/train
+inputs/leaves_dataset/cherry-leaves/processed_images/validation
 
 # Version control
 .git/
