@@ -30,10 +30,10 @@ def plot_predictions_probabilities(pred_proba, pred_class):
     """
 
     prob_per_class = pd.DataFrame(
-        data=[0, 0],
-        index={'Healthy': 0, 'Powdery Mildew': 1}.keys(),
-        columns=['Probability']
-    )
+    data=[0.0, 0.0],  # Use floats instead of integers to avoid FutureWarning
+    index={'Healthy': 0, 'Powdery Mildew': 1}.keys(),
+    columns=['Probability']
+)
 
     # Explicitly cast pred_proba to float to avoid dtype warning
     prob_per_class.loc[pred_class] = float(pred_proba)

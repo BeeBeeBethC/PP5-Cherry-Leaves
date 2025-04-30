@@ -38,7 +38,7 @@ def page1_body():
         f"healthy or contains powdery mildew."
     )
     
-    st.info("### Data source and more information\n\n"
-        f"* Data source: https://www.kaggle.com/codeinstitute/cherry-leaves \n"
-        f"* Readme Link: https://github.com/BeeBeeBethC/PP5-Cherry-Leaves \n"
+    st.info("### More Information\n\n"
+        f"More information can be found via this README \n"
+        f" [link](https://github.com/BeeBeeBethC/PP5-Cherry-Leaves) \n"
     )
