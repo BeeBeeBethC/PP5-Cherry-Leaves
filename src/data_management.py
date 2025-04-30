@@ -3,6 +3,7 @@ import os
 import shutil
 import random
 import pandas as pd
+import streamlit as st
 from tensorflow import keras
 from keras.preprocessing.image import load_img, img_to_array
 import numpy as np
@@ -57,3 +58,13 @@ class DataManager:
                     src = os.path.join(self.data_dir, label, file)
                     dst = os.path.join(subset_dir, file)
                     shutil.move(src, dst)
+
+
+def download_dataframe_as_csv(df, filename="data.csv"):
+    csv = df.to_csv(index=False)
+    st.download_button(
+        label="📥 Download data as CSV",
+        data=csv,
+        file_name=filename,
+        mime="text/csv",
+    )

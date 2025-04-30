@@ -11,7 +11,7 @@ app = MultiPage(app_name= "Mildew Detection in Cherry Leaves")
 
 app.app_page("Project Summary", page1_body)
 app.app_page("Visualizations", page2_body)
-app.app_page("Page 3", page3_body)
+app.app_page("Predictions", page3_body)
 app.app_page("Page 4", page4_body)
 app.app_page("Page 5", page5_body)
 
