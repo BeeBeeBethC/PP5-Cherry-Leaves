@@ -1,60 +1,94 @@
-import tensorflow as tf
+import time
+import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
+import pandas as pd
+import plotly.express as px
+import tensorflow as tf
 from tensorflow import keras
-from keras.preprocessing.image import load_img, img_to_array
+from keras.models import load_model
+from PIL import Image
+from src.data_management import load_pkl_file
 
-class PredictiveAnalysis:
-    def __init__(self, model_path):
-        self.model = tf.keras.models.load_model(model_path)
-        self.image_shape = (100, 100)  # Standard size for leaf images
-        
-    def process_image(self, image_path):
-        """Process image for prediction"""
-        img = load_img(image_path, target_size=self.image_shape)
-        img_array = img_to_array(img)
-        img_array = np.expand_dims(img_array, axis=0)
-        img_array = img_array / 255.0  # Normalize
-        return img_array
-        
-    def predict(self, image_path):
-        """Predict if leaf has powdery mildew"""
-        processed_image = self.process_image(image_path)
-        prediction = self.model.predict(processed_image)
-        return prediction[0][0]  # Return probability
 
-# helper function for Streamlit use
-def load_model_and_predict(img, version='v1'):
-    model = tf.keras.models.load_model('/workspaces/PP5-Cherry-Leaves/outputs/v13/cherry_leaf_model.keras')
+# This will be used to keep track of counts for each class to avoid duplication in keys.
+class Counter:
+    def __init__(self):
+        self.counts = {}
 
-    # Resize and normalize image
-    img = img.resize((100, 100))
-    img_array = img_to_array(img)
-    img_array = np.expand_dims(img_array, axis=0)
-    img_array = img_array / 255.0
+    def get_count(self, label):
+        if label not in self.counts:
+            self.counts[label] = 0
+        else:
+            self.counts[label] += 1
+        return self.counts[label]
 
-    # Predict
-    pred_proba = model.predict(img_array)[0][0]
-    pred_class = "healthy" if pred_proba < 0.5 else "powdery_mildew"
-    
-    return pred_proba, pred_class
-
-def resize_input_image(img, version='v1'):
-    """Resize image based on version (e.g., for different input sizes)"""
-    if version == 'v1':
-        img_resized = img.resize((100, 100))  # Standard size for v1
-    else:
-        img_resized = img.resize((150, 150))  # Change size for other versions
-    return img_resized
+counter = Counter()
 
 def plot_predictions_probabilities(pred_proba, pred_class):
-    """Plot the predictions and probabilities"""
-    labels = ['Healthy', 'Powdery Mildew']
-    probabilities = [1 - pred_proba, pred_proba]
-    
-    # Plot the bar chart for the probabilities
-    plt.bar(labels, probabilities, color=['green', 'red'])
-    plt.title(f"Prediction: {pred_class.capitalize()} (Probability: {pred_proba*100:.2f}%)")
-    plt.ylabel("Probability")
-    plt.ylim([0, 1])
-    plt.show()
+    """
+    Plot prediction probability results
+    """
+
+    prob_per_class = pd.DataFrame(
+        data=[0, 0],
+        index={'Healthy': 0, 'Powdery Mildew': 1}.keys(),
+        columns=['Probability']
+    )
+
+    # Explicitly cast pred_proba to float to avoid dtype warning
+    prob_per_class.loc[pred_class] = float(pred_proba)
+
+    # Handle the other class (if not already assigned)
+    for x in prob_per_class.index.to_list():
+        if x not in pred_class:
+            prob_per_class.loc[x] = 1 - pred_proba
+            
+    prob_per_class = prob_per_class.round(3)
+    prob_per_class['Diagnostic'] = prob_per_class.index
+
+    # Create a unique key using class label and a counter to handle duplicates
+    unique_count = counter.get_count(pred_class)
+    unique_key = f"plot_{pred_class}_{unique_count}_{int(time.time())}"
+
+    # Plot the results with a dynamic key to avoid duplication issues
+    fig = px.bar(
+        prob_per_class,
+        x='Diagnostic',
+        y=prob_per_class['Probability'],
+        range_y=[0, 1],
+        width=600, height=300, template='seaborn'
+    )
+    st.plotly_chart(fig, key=unique_key)
+
+
+def resize_input_image(img, version):
+    """
+    Reshape image to average image size
+    """
+    image_shape = load_pkl_file(file_path=f"/workspaces/PP5-Cherry-Leaves/outputs/image_shape_2.pkl")
+    img_resized = img.resize((image_shape[1], image_shape[0]), Image.LANCZOS)
+    my_image = np.expand_dims(img_resized, axis=0)/255
+
+    return my_image
+
+
+def load_model_and_predict(my_image, version):
+    """
+    Load and perform ML prediction over live images
+    """
+
+    model = load_model(f"/workspaces/PP5-Cherry-Leaves/outputs/cherry_leaf_model.h5")
+
+    pred_proba = model.predict(my_image)[0, 0]
+
+    target_map = {v: k for k, v in {'Healthy': 0, 'Powdery Mildew': 1}.items()}
+    pred_class = target_map[pred_proba > 0.5]
+    if pred_class == target_map[0]:
+        pred_proba = 1 - pred_proba
+
+    st.write(
+        f"The predictive analysis indicates the leaf is "
+        f"**{pred_class.lower()}**."
+    )
+
+    return pred_proba, pred_class
