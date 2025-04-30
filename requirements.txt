@@ -30,7 +30,7 @@ numpy==1.26.1
 opt_einsum==3.4.0
 optree==0.14.1
 pandas==2.1.1
-Pillow==10.0.1
+pillow==11.2.1
 plotly==5.17.0
 protobuf==4.25.6
 pyarrow==19.0.1
