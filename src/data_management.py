@@ -3,7 +3,8 @@ import os
 import shutil
 import random
 import pandas as pd
-from tensorflow.keras.preprocessing.image import load_img, img_to_array
+from tensorflow import keras
+from keras.preprocessing.image import load_img, img_to_array
 import numpy as np
 
 class DataManager:

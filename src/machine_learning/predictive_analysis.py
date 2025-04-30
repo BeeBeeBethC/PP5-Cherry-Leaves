@@ -2,13 +2,12 @@
 import tensorflow as tf
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras.preprocessing.image import load_img
-from tensorflow.keras.preprocessing.image import img_to_array
+from keras.preprocessing.image import load_img, img_to_array
 
 class PredictiveAnalysis:
     def __init__(self, model_path):
         self.model = tf.keras.models.load_model(model_path)
-        self.image_shape = (256, 256)  # Standard size for leaf images
+        self.image_shape = (100, 100)  # Standard size for leaf images
         
     def process_image(self, image_path):
         """Process image for prediction"""
