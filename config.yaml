@@ -1,12 +1,16 @@
 # config.yaml
 
 # Directory paths
-base_directory: "/workspaces/PP5-Cherry-Leaves"
-outputs_directory: "${base_directory}/outputs"
-# models_directory: "${outputs_directory}/models"
-# visuals_directory: "${outputs_directory}/ml_visuals"
-# image_shape_file: "${outputs_directory}/image_shape_2.pkl"
-# model_file: "${models_directory}/cherry_leaf_model.h5"
+base_dir: "/workspaces/PP5-Cherry-Leaves"
+outputs_dir: "outputs"
+processed_images_path: "/workspaces/PP5-Cherry-Leaves/inputs/leaves_dataset/cherry-leaves/processed_images"
+dataset_name: "cherry-leaves"
+dataset_zip_name: "cherry-leaves.zip"
+dataset_extract_name: "cherry-leaves"
+input_folder: "inputs/leaves_dataset"
+
+kaggle_json_path: "kaggle.json"
+kaggle_username: "codeinstitute"
 
 # Other settings
 image_size: [100, 100]
