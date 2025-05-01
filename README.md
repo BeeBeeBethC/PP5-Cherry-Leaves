@@ -55,6 +55,14 @@ To save time in this process, the IT team suggested an ML system that detects in
 ## Hypothesis and how to validate?
 
 - List here your project hypothesis(es) and how you envision validating it (them).
+Objective
+The objective of this project is to develop a machine learning model that:
+  - Can be deployed in a user-friendly web app
+  - Accurately classifies uploaded cherry leaf images as **healthy**
+          or **infected**
+  - Assists growers and agricultural specialists with
+          **early disease detection**
+    This outlines the scientific hypothesis and project goal driving the machine learning solution.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
