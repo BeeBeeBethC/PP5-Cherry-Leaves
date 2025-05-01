@@ -1,0 +1,15 @@
+# config.yaml
+
+# Directory paths
+base_directory: "/workspaces/PP5-Cherry-Leaves"
+outputs_directory: "${base_directory}/outputs"
+# models_directory: "${outputs_directory}/models"
+# visuals_directory: "${outputs_directory}/ml_visuals"
+# image_shape_file: "${outputs_directory}/image_shape_2.pkl"
+# model_file: "${models_directory}/cherry_leaf_model.h5"
+
+# Other settings
+image_size: [100, 100]
+target_map:
+  healthy: 0
+  powdery_mildew: 1
