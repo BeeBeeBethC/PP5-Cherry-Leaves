@@ -22,4 +22,3 @@ outputs/train_dataframe.csv
 outputs/validation_dataframe.csv
 README.md
 kaggle.json
-config.yaml
