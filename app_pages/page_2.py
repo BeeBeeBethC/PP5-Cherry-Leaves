@@ -17,53 +17,65 @@ def page2_body():
 
     # Radio for single-selection "accordion"
     section = st.radio("Choose a section:", [
-            "Average & Variability Images",
-            "Average Differences",
-            "Image Montage"
-        ],
-        index=0
-    )
+        "Average & Variability Images",
+        "Average Differences",
+        "Image Montage"
+    ], index=0)
 
     if section == "Average & Variability Images":
-        avg_healthy = plt.imread(f"outputs/{version}/avg_var_healthy.png")
-        avg_powdery_mildew = plt.imread(f"outputs/{version}/avg_var_powdery_mildew.png")
+        avg_healthy_path = f"outputs/{version}/avg_var_healthy.png"
+        avg_powdery_path = f"outputs/{version}/avg_var_powdery_mildew.png"
 
-        st.warning(
-            f"* While the images show structure, distinct patterns were not \n"
-            f" observed to differentiate between the two categories. \n"
-            f" however, slight color variations can be identified."
-        )
+        if os.path.exists(avg_healthy_path) and os.path.exists(avg_powdery_path):
+            avg_healthy = plt.imread(avg_healthy_path)
+            avg_powdery_mildew = plt.imread(avg_powdery_path)
 
-        st.image(avg_healthy, caption='Healthy Leaf - Average and Variability')
-        st.image(avg_powdery_mildew, caption='Diseased Leaf - Average and Variability')
+            st.warning(
+                " The different images highlight subtle variations.\n"
+                "On its own, this may not be visually intuitive enough \n"
+                "for classification purposes."
+            )
+
+            st.image(avg_healthy, caption='Healthy Leaf - Average and Variability')
+            st.image(avg_powdery_mildew, caption='Diseased Leaf - Average and Variability')
+        else:
+            st.error("One or more visualization images could not be found.")
         st.write("---")
 
     elif section == "Average Differences":
-        diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
+        avg_diff_path = f"outputs/{version}/avg_diff.png"
 
-        st.warning(
-            f"* The difference image highlights subtle variations, standalone, \n"
-            f"these may not be visually intuitive enough for classification."
-        )
+        if os.path.exists(avg_diff_path):
+            diff_between_avgs = plt.imread(avg_diff_path)
 
-        st.image(diff_between_avgs, caption='Difference between average images')
+            st.warning(
+                "* The difference image highlights subtle variations. "
+                "Standalone, these may not be visually intuitive enough for classification."
+            )
+
+            st.image(diff_between_avgs, caption='Difference between average images')
+        else:
+            st.error("The difference image 'avg_diff.png' could not be found.")
         st.write("---")
 
     elif section == "Image Montage":
-        st.warning(f"* To refresh, click on the 'Generate Example' \n"
-                   f" button")
+        st.warning("* To refresh, click on the 'Generate Example' button")
 
         static_dir = 'static/validation_images'
         labels = os.listdir(static_dir)
-        label_to_display = st.selectbox(
-            label="Select label",
-            options=labels,
-            index=0
-        )
+
+        if labels:
+            label_to_display = st.selectbox("Select label", options=labels, index=0)
+        else:
+            st.error("No label folders found in 'static/validation_images'.")
+            return
 
         if st.button("Generate Example"):
             image_folder = os.path.join(static_dir, label_to_display)
-            image_files = [f for f in os.listdir(image_folder) if f.endswith(('.png', '.jpg', '.jpeg'))]
+            image_files = [
+                f for f in os.listdir(image_folder)
+                if f.endswith(('.png', '.jpg', '.jpeg'))
+            ]
 
             if len(image_files) < 4:
                 st.warning(
@@ -71,22 +83,26 @@ def page2_body():
                     "Consider verifying that at least 4 representative images exist."
                 )
 
-            image_montage(
-                dir_path=image_folder,
-                label_to_display=label_to_display,
-                nrows=2,
-                ncols=2,
-                figsize=(6, 6)
-            )
+            with st.spinner("Generating image montage..."):
+                image_montage(
+                    dir_path=image_folder,
+                    label_to_display=label_to_display,
+                    nrows=2,
+                    ncols=2,
+                    figsize=(6, 6)
+                )
         st.write("---")
 
 
 # Image Montage Function
 def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
     sns.set_style("white")
-    
+
     # Get all images in the selected folder
-    image_files = sorted([f for f in os.listdir(dir_path) if f.endswith(('.png', '.jpg', '.jpeg'))])
+    image_files = sorted([
+        f for f in os.listdir(dir_path)
+        if f.endswith(('.png', '.jpg', '.jpeg'))
+    ])
 
     if not image_files:
         st.warning("No images found in the selected folder.")

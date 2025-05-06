@@ -1,4 +1,5 @@
 import os
+import pandas as pd
 from PIL import Image
 import streamlit as st
 
@@ -15,23 +16,23 @@ def page5_body():
     else:
         st.info("Confusion matrix image not yet available _Coming soon..._")
 
-    # Display Classification Report
-    def display_file_content(file_path):
-        try:
-            with open(file_path, 'r') as file:
-                content = file.read()
-            return content
-        except FileNotFoundError:
-            st.error(f"File not found: {file_path}")
-            return None
+    def display_classification_report():
+    # Path to the classification report CSV file
+        csv_path = "/workspaces/PP5-Cherry-Leaves/outputs/saved_results/classification_report.csv"
+    
+        # Check if the CSV file exists
+        if os.path.exists(csv_path):
+            # Load the CSV file into a pandas DataFrame
+            class_report_df = pd.read_csv(csv_path)
+        
+            # Display the classification report as a table in Streamlit
+            st.markdown("### Classification Report")
+            st.dataframe(class_report_df, use_container_width=True)
+        else:
+            # If the file doesn't exist, show an info message
+            st.info("Classification report not yet available _Coming soon..._")
 
-    st.markdown("### Classification Report")
-    file_path = '/workspaces/PP5-Cherry-Leaves/outputs/reports/classification_report.txt'  # Adjust if needed
-    file_content = display_file_content(file_path)
-    if file_content:
-        st.text(file_content)
-    else:
-        st.info("Classification report not yet available _Coming soon..._")
+    display_classification_report()
 
     # ROC Curve and AUC Score
     st.header("ROC Curve & AUC Score")
@@ -43,8 +44,10 @@ def page5_body():
         st.info("ROC Curve image not yet available _Coming soon..._")
 
     st.markdown("""
-    The AUC (Area Under the Curve) score indicates the model's ability to 
-    distinguish between the two classes. An AUC closer to 1.0 signifies excellent performance.
+                AUC: 0.9984
+                The AUC (Area Under the Curve) score indicates the model's 
+                ability to distinguish between the two classes. 
+                An AUC closer to 1.0 signifies excellent performance.
     """)
 
     # Sample Predictions on Unseen Data
@@ -60,4 +63,7 @@ def page5_body():
     else:
         st.info("Sample prediction images not yet available _Coming soon..._")
 
-    st.success("Model performance looks promising based on these metrics and predictions.")
+    st.success(f"Overall, the model is highly accurate (98% acccuracy) with \n"
+                f"very few misclassifications, and it performs well in \n"
+                f"distinguishing between healthy and powdery mildew leaves \n" 
+                f"on unseen data.")

@@ -1,44 +1,29 @@
 import streamlit as st
 
-
 def page1_body():
     
     st.write(
-        f"(For the purpose of this project, A fictional business \n"
-        f"was created.) \n\n"
-        f"Farmy & Foods, a fictional company in the agricultural \n"
-        f"sector, produces and harvests different types of food. \n"
-        f"Recently, they are facing a challenge where their cherry \n"
-        f"plantations have been presenting with powdery mildew."
+        f"(For the purpose of this project, a fictional business was created.) \n\n"
+        f"Farmy & Foods, a fictional company in the agricultural sector, produces and harvests various types of food. "
+        f"Recently, they have been facing a challenge: their cherry plantations are affected by powdery mildew."
     )
     st.write(
-        f"Powdery Mildew is a fungal disease which affects plants and crops. \n"
-        f"The cherry plantation belonging to Farmy and Foods, is one of \n"
-        f"their finest products in their portfolio. \n"
-        f"Farmy and Foods are concerned about supplying the market with a \n"
-        f"product of compromised quality."
+        f"Powdery mildew is a fungal disease that affects plants and crops. "
+        f"The cherry plantation at Farmy & Foods is one of their most prized products, and they are concerned about its "
+        f"quality due to this disease."
     )
     st.write(
-        f"Currently, the process is to manually verify if a given cherry \n"
-        f"tree contains powdery mildew. \n"
-        f"As a result, this manual process is not scalable due to it being \n"
-        f"time consuming (30 minutes per tree). \n\n"
-        f"To save time in this process, The IT team suggested an Machine \n"
-        f"Learning system that is capable of detecting Powdery Mildews in \n"
-        f"Cherry Leaves. \n"
-        f"Using a tree leaf image, to identify if the leaf is healthy or \n"
-        f"has powdery mildew present."
+        f"Currently, the process of detecting powdery mildew is manual and time-consuming, with each tree taking about 30 minutes to inspect. "
+        f"This process is not scalable, especially given the large number of trees in the plantation. \n\n"
+        f"To solve this problem, the IT team suggested implementing a Machine Learning system capable of automatically detecting "
+        f"powdery mildew in cherry leaves by analyzing images of the leaves to classify them as either healthy or infected."
     )
     
     st.success("### Business Requirements\n\n"
-        f"1. The client is interested in conducting a study \n"
-        f"to visually differentiate a cherry leaf that is healthy from one \n"
-        f"that contains powdery mildew.\n\n"
-        f"2. The client is interested in predicting if a cherry leaf is \n"
-        f"healthy or contains powdery mildew."
+        f"1. The client wants to conduct a study to visually differentiate healthy cherry leaves from those affected by powdery mildew.\n\n"
+        f"2. The client seeks a solution that can predict whether a cherry leaf is healthy or infected with powdery mildew."
     )
     
     st.info("### More Information\n\n"
-        f"More information can be found via this README \n"
-        f" [link](https://github.com/BeeBeeBethC/PP5-Cherry-Leaves) \n"
+        f"Further details can be found in this README file: [link](https://github.com/BeeBeeBethC/PP5-Cherry-Leaves)\n"
     )
