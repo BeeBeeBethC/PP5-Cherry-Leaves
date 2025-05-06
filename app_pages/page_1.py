@@ -1,7 +1,8 @@
 import streamlit as st
 
+
 def page1_body():
-    
+
     st.write(
         f"(For the purpose of this project, a fictional business was created.) \n\n"
         f"Farmy & Foods, a fictional company in the agricultural sector, produces and harvests various types of food. "
@@ -18,12 +19,12 @@ def page1_body():
         f"To solve this problem, the IT team suggested implementing a Machine Learning system capable of automatically detecting "
         f"powdery mildew in cherry leaves by analyzing images of the leaves to classify them as either healthy or infected."
     )
-    
+
     st.success("### Business Requirements\n\n"
-        f"1. The client wants to conduct a study to visually differentiate healthy cherry leaves from those affected by powdery mildew.\n\n"
-        f"2. The client seeks a solution that can predict whether a cherry leaf is healthy or infected with powdery mildew."
-    )
-    
+               f"1. The client wants to conduct a study to visually differentiate healthy cherry leaves from those affected by powdery mildew.\n\n"
+               f"2. The client seeks a solution that can predict whether a cherry leaf is healthy or infected with powdery mildew."
+               )
+
     st.info("### More Information\n\n"
-        f"Further details can be found in this README file: [link](https://github.com/BeeBeeBethC/PP5-Cherry-Leaves)\n"
-    )
+            f"Further details can be found in this README file: [link](https://github.com/BeeBeeBethC/PP5-Cherry-Leaves)\n"
+            )

@@ -3,6 +3,7 @@ import pandas as pd
 from PIL import Image
 import streamlit as st
 
+
 def page5_body():
     st.title("Model Evaluation Metrics")
     st.markdown("---")
@@ -17,14 +18,14 @@ def page5_body():
         st.info("Confusion matrix image not yet available _Coming soon..._")
 
     def display_classification_report():
-    # Path to the classification report CSV file
+        # Path to the classification report CSV file
         csv_path = "/workspaces/PP5-Cherry-Leaves/outputs/saved_results/classification_report.csv"
-    
+
         # Check if the CSV file exists
         if os.path.exists(csv_path):
             # Load the CSV file into a pandas DataFrame
             class_report_df = pd.read_csv(csv_path)
-        
+
             # Display the classification report as a table in Streamlit
             st.markdown("### Classification Report")
             st.dataframe(class_report_df, use_container_width=True)
@@ -64,6 +65,6 @@ def page5_body():
         st.info("Sample prediction images not yet available _Coming soon..._")
 
     st.success(f"Overall, the model is highly accurate (98% acccuracy) with \n"
-                f"very few misclassifications, and it performs well in \n"
-                f"distinguishing between healthy and powdery mildew leaves \n" 
-                f"on unseen data.")
+               f"very few misclassifications, and it performs well in \n"
+               f"distinguishing between healthy and powdery mildew leaves \n"
+               f"on unseen data.")

@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def page4_body():
     st.markdown("## Project Hypothesis")
 
@@ -11,4 +12,3 @@ def page4_body():
              identifying **distinct visual features** (biological markers) 
              associated with the powdery mildew infection.
     """)
-

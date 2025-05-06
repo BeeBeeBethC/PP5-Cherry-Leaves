@@ -36,8 +36,14 @@ def page2_body():
                 "for classification purposes."
             )
 
-            st.image(avg_healthy, caption='Healthy Leaf - Average and Variability')
-            st.image(avg_powdery_mildew, caption='Diseased Leaf - Average and Variability')
+            st.image(
+                avg_healthy,
+                caption='Healthy Leaf - Average and Variability'
+            )
+            st.image(
+                avg_powdery_mildew,
+                caption='Diseased Leaf - Average and Variability'
+            )
         else:
             st.error("One or more visualization images could not be found.")
         st.write("---")
@@ -49,11 +55,15 @@ def page2_body():
             diff_between_avgs = plt.imread(avg_diff_path)
 
             st.warning(
-                "* The difference image highlights subtle variations. "
-                "Standalone, these may not be visually intuitive enough for classification."
+                "The difference image highlights subtle variations. \n"
+                "Standalone, these may not be visually intuitive enough \n"
+                "for classification."
             )
 
-            st.image(diff_between_avgs, caption='Difference between average images')
+            st.image(
+                diff_between_avgs,
+                caption='Difference between average images'
+            )
         else:
             st.error("The difference image 'avg_diff.png' could not be found.")
         st.write("---")
@@ -65,7 +75,11 @@ def page2_body():
         labels = os.listdir(static_dir)
 
         if labels:
-            label_to_display = st.selectbox("Select label", options=labels, index=0)
+            label_to_display = st.selectbox(
+                label="Select label",
+                options=labels,
+                index=0
+            )
         else:
             st.error("No label folders found in 'static/validation_images'.")
             return
@@ -79,8 +93,10 @@ def page2_body():
 
             if len(image_files) < 4:
                 st.warning(
-                    f"* Only {len(image_files)} image(s) found in this category. "
-                    "Consider verifying that at least 4 representative images exist."
+                    f"* Only {len(image_files)} image(s) found in this \n"
+                    f"category. \n"
+                    "Consider verifying that at least 4 representative \n"
+                    f" images exist."
                 )
 
             with st.spinner("Generating image montage..."):
@@ -95,7 +111,12 @@ def page2_body():
 
 
 # Image Montage Function
-def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
+def image_montage(dir_path,
+                  label_to_display,
+                  nrows,
+                  ncols,
+                  figsize=(15, 10)
+                  ):
     sns.set_style("white")
 
     # Get all images in the selected folder
