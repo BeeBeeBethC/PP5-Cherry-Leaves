@@ -1,35 +1,17 @@
 
-# Data and models - only keep essential model file
-inputs/
-data/
-datasets/
-outputs/*
-!outputs/cherry_leaf_model.h5
+# slugignore
 
-# Development files
-*.keras
-*.h5
-!outputs/cherry_leaf_model.h5
-*.hdf5
-*.pkl
-!outputs/class_indices.pkl
-*.csv
-*.png
-*.jpg
-*.jpeg
+/inputs/leaves_dataset/cherry-leaves/processed_images/test
+/inputs/leaves_dataset/cherry-leaves/processed_images/train
+/inputs/leaves_dataset/cherry-leaves/processed_images/validation
 jupyter_notebooks/
-*.ipynb
-__pycache__/
-*.py[cod]
-.devcontainer/
-.python-version
-.DS_Store
-kaggle.json
-
-# Git artifacts
-.git/
-.gitignore
-.github/
-
-# Cache and temp files
-.ipynb_checkpoints/
+.devcontainer
+/outputs/figures/*
+outputs/pkl*
+outputs/saved_results/*
+outputs/training_plots/*
+outputs/v13/*
+static/*
+*.png
+app_pages/__pycache__/*
+README.md

@@ -1,32 +1,20 @@
-
-# Python
-__pycache__/
-*.py[cod]
-*.so
-env.py
-.env
-.venv
-*.pkl
-*.h5
-*.keras
-
-# Data and Notebooks
-inputs/
-outputs/
-jupyter_notebooks/
-*.csv
-
-# IDE and Development
-.vscode/
-.idea/
-.devcontainer/
 core.Microsoft*
 core.mongo*
 core.python*
-
-# Misc
-.DS_Store
+env.py
+__pycache__/
+*.py[cod]
 node_modules/
 .github/
 cloudinary_python.txt
+inputs/datasets/cherry-leaves/test/healthy
+inputs/datasets/cherry-leaves/test/powdery_mildew
+inputs/datasets/cherry-leaves/train/healthy
+inputs/datasets/cherry-leaves/train/powdery_mildew
+inputs/datasets/cherry-leaves/validation/powdery_mildew
+inputs/datasets/cherry-leaves/validation/healthy
+jupyter_notebooks/test_dataframe.csv
+jupyter_notebooks/train_dataframe.csv
+jupyter_notebooks/validation_dataframe.csv
+README.md
 kaggle.json
