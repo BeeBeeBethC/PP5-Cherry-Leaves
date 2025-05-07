@@ -3,10 +3,24 @@ jupyter_notebooks/
 *.ipynb
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
 # Large datasets and images
+data/
+datasets/
+inputs/
+jupyter_notebooks/
+*.csv
+*.keras
+*.pkl
+.git/
+.gitignore
+.python-version
+.devcontainer/
 outputs/training_plots/
-outputs/*.h5
+outputs/v13/
+*.ipynb
 outputs/*.keras
 outputs/*.csv
 outputs/*.png
@@ -19,10 +33,10 @@ inputs/leaves_dataset/cherry-leaves/processed_images/test
 inputs/leaves_dataset/cherry-leaves/processed_images/train
 inputs/leaves_dataset/cherry-leaves/processed_images/validation
 
-# Version control
-.git/
-.gitignore
-
 # IDE and environment
 .python-version
 .devcontainer/
+
+# Cache and temp files 
+*.log
+.DS_Store
