@@ -69,7 +69,7 @@ def page2_body():
         st.write("---")
 
     elif section == "Image Montage":
-        st.warning("* To refresh, click on the 'Generate Example' button")
+        st.warning("* To view images, click on the 'Show' button")
 
         static_dir = 'static/validation_images'
         labels = os.listdir(static_dir)
@@ -84,7 +84,7 @@ def page2_body():
             st.error("No label folders found in 'static/validation_images'.")
             return
 
-        if st.button("Generate Example"):
+        if st.button("Show"):
             image_folder = os.path.join(static_dir, label_to_display)
             image_files = [
                 f for f in os.listdir(image_folder)
