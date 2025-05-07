@@ -14,7 +14,6 @@ README.md
 .ipynb_checkpoints/
 outputs/*.csv
 .DS_Store
-.python-version
 .devcontainer/
 *.keras
 *.pkl

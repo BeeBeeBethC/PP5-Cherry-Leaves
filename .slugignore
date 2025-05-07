@@ -7,13 +7,9 @@ outputs/
 *.hdf5
 *.pkl
 *.csv
-*.zip
-*.log
 *.png
 *.jpg
 *.jpeg
-*.tiff
-*.bmp
 jupyter_notebooks/
 *.ipynb
 __pycache__/
@@ -21,3 +17,4 @@ __pycache__/
 .devcontainer/
 .python-version
 .DS_Store
+kaggle.json
