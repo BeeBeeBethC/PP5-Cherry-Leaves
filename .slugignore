@@ -6,12 +6,7 @@
 /inputs/leaves_dataset/cherry-leaves/processed_images/validation
 jupyter_notebooks/
 .devcontainer
-/outputs/figures/*
-outputs/pkl*
-outputs/saved_results/*
-outputs/training_plots/*
 outputs/v13/*
 static/*
-*.png
 app_pages/__pycache__/*
 README.md
