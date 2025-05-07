@@ -1,23 +1,32 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+env.py
+.env
+.venv
+*.pkl
+*.h5
+*.keras
+
+# Data and Notebooks
+inputs/
+outputs/
+jupyter_notebooks/
+*.csv
+
+# IDE and Development
+.vscode/
+.idea/
+.devcontainer/
 core.Microsoft*
 core.mongo*
 core.python*
-env.py
-__pycache__/
-*.py[cod]
+
+# Misc
+.DS_Store
 node_modules/
 .github/
-kaggle.json
 cloudinary_python.txt
-inputs/leaves_dataset/cherry-leaves/**/healthy/
-inputs/leaves_dataset/cherry-leaves/**/powdery_mildew/
-README.md
-.ipynb_checkpoints/
-outputs/*.csv
-.DS_Store
-.devcontainer/
-*.keras
-*.pkl
-*.h5
-*.tflite
-*.pkl
-/processed_images/
+kaggle.json
