@@ -23,8 +23,8 @@ def page2_body():
     ], index=0)
 
     if section == "Average & Variability Images":
-        avg_healthy_path = f"outputs/{version}/avg_var_healthy.png"
-        avg_powdery_path = f"outputs/{version}/avg_var_powdery_mildew.png"
+        avg_healthy_path = f"outputs/figures/avg_var_healthy.png"
+        avg_powdery_path = f"outputs/figures/avg_var_powdery_mildew.png"
 
         if os.path.exists(avg_healthy_path) and os.path.exists(avg_powdery_path):
             avg_healthy = plt.imread(avg_healthy_path)
@@ -49,7 +49,7 @@ def page2_body():
         st.write("---")
 
     elif section == "Average Differences":
-        avg_diff_path = f"outputs/{version}/avg_diff.png"
+        avg_diff_path = f"outputs/figures/avg_diff.png"
 
         if os.path.exists(avg_diff_path):
             diff_between_avgs = plt.imread(avg_diff_path)

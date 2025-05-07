@@ -7,6 +7,5 @@
 jupyter_notebooks/
 .devcontainer
 outputs/v13/*
-static/*
 app_pages/__pycache__/*
 README.md
