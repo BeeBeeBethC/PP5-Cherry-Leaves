@@ -1,32 +1,26 @@
 
-# Data and models - keep only essential model files
+# Data and models - only keep essential model file
 inputs/
 data/
 datasets/
 outputs/*
 !outputs/cherry_leaf_model.h5
-!outputs/class_indices.pkl
 
-# Model files
+# Development files
 *.keras
 *.h5
 !outputs/cherry_leaf_model.h5
 *.hdf5
 *.pkl
 !outputs/class_indices.pkl
-
-# Data files
 *.csv
 *.png
 *.jpg
 *.jpeg
-
-# Development files
 jupyter_notebooks/
 *.ipynb
 __pycache__/
 *.py[cod]
-.ipynb_checkpoints/
 .devcontainer/
 .python-version
 .DS_Store
@@ -36,4 +30,6 @@ kaggle.json
 .git/
 .gitignore
 .github/
-git add
+
+# Cache and temp files
+.ipynb_checkpoints/
