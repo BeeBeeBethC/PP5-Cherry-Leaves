@@ -18,3 +18,7 @@ outputs/*.csv
 .devcontainer/
 *.keras
 *.pkl
+*.h5
+*.tflite
+*.pkl
+/processed_images/
