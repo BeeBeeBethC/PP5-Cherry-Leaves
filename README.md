@@ -1,12 +1,26 @@
 # Portfolio Project 5 - Mildew Detection in Cherry Leaves
 
-## Dataset Content
+---
 
-**Important Note**: Farmy and Foods is a ficticious, hypothetical agricultural company. Created to fulfill the requirements of **Specialisation Project - Portfolio Project 5 - Predictive Analytics** where predictive analytics can be applied in a real project in the workplace.for Code Institute.
+# Important Note
+
+Farmy and Foods is a ficticious, hypothetical agricultural company. Created to fulfill the requirements of **Specialisation Project - Portfolio Project 5 - Predictive Analytics** where predictive analytics can be applied in a real project in the workplace for Code Institute.
+
+In the real world, specifically in relation to the Non-Disclosure Agreement. This project would be conducted in a private repository and shared with only the relevant professionals.
+
+However for assessment purposes this portfolio project is in a public repository.
+
+---
+
+## Dataset Content
 
 - The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves).
 
-- The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
+- The dataset contains 4208 images taken from the client's crop fields, which have been resized from 256px x 256px to 100px x 100px for efficient hosting.
+  
+- The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species.
+
+---
 
 ## Business Requirements
 
@@ -18,11 +32,13 @@ The time spent applying this compound is 1 minute. The company has thousands of 
 
 To save time in this process, the IT team suggested an Machine Learning system that detects instantly, using a leaf tree image, if it is healthy or has powdery mildew.
 
-A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project for all other crops. The dataset is a collection of cherry leaf images provided by Farmy & Foods, taken from their crops and a Non Disclosure Agreement (NDA) in place.
+A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project for all other crops. The dataset is a collection of cherry leaf images provided by Farmy & Foods, taken from their crops.
 
 - 1 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
 
 - 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+
+---
 
 ## Hypothesis
 
@@ -40,22 +56,150 @@ To adhere to the NDA, only a small sample of images are available for use of sup
 
 This outlines the scientific hypothesis and project goal driving the machine learning solution generated within this project.
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
+---
 
-- List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+## Project Rationale
 
-## ML Business Case
+We aim to develop a machine learning model that predicts whether a plant leaf is healthy or infected with powdery mildew, using historical image data. This is a supervised, binary classification task, where each image is labeled as either “healthy” or “powdery mildew.”
 
-- In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+### Business Goal
+
+Enable farmers and agricultural technicians to quickly and reliably detect powdery mildew in plants using smartphone images.
+
+### Problem Context
+
+Manual inspection of leaves is labor-intensive and requires expert knowledge. Visual symptoms of powdery mildew can be subtle in early stages, leading to delayed diagnosis and crop loss. Small farms and remote regions often lack access to plant pathology experts.
+
+### Desired Outcome
+
+Deploy a real-time prediction system via a Streamlit-based web application. Users can upload a leaf image and instantly receive a diagnosis flag (“infected” or “healthy”) with the associated confidence score.
+
+### Performance Metrics
+
+- Model must achieve at least 97% accuracy.
+- Additional evaluation includes the confusion matrix, classification report, and ROC-AUC curve to assess balance between precision and recall as well as a sample predictions showing predicted and true values.
+
+### Heuristics
+
+Powdery mildew detection currently relies on subjective visual inspection under field conditions, which can be inconsistent. An image-based ML model could serve as a decision support tool to augment field assessments.
+
+### Dataset
+
+- The dataset contains 4208 images which got split into three subsets of data reduced from 256px x 256px to 100px x 100px to accomodate hosting limitations.
+- The training data consists of a curated subset of processed '.PNG' images organized into two classes: “healthy” and “powdery mildew.”
+- The dataset has been augmented and split for training, validation, and testing at ratios of 0.7, 0.15, 0.15 summing up to 1.0.
+- This equates to 2,946 for training subset, 631 for validation subset and 631 for the testing subset.
+
+---
+
+## Machine Learning Business Case
+
+### What are the business requirements?
+
+- The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+- The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+
+### Is there any business requirement that can be answered with conventional data analysis?
+
+- Yes, we can use conventional data analysis to conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+
+### Does the client need a dashboard or an API endpoint?
+
+- The client needs a dashboard.
+
+### What does the client consider as a successful project outcome?
+
+- A study showing how to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+- Also, the capability to predict if a cherry leaf is healthy or contains powdery mildew.
+
+### Can you break down the project into Epics and User Stories?
+
+- Information gathering and data collection.
+- Data visualization, cleaning, and preparation.
+- Model training, optimization and validation.
+- Dashboard planning, designing, and development.
+- Dashboard deployment and release.
+
+### Ethical or Privacy concerns?
+
+- The client provided the data under an NDA (non-disclosure agreement), therefore the data should only be shared with professionals that are officially involved in the project.
+
+### Does the data suggest a particular model?
+
+- The data suggests a binary classifier, indicating whether a particular cherry leaf is healthy or contains powdery mildew.
+
+### What are the model's inputs and intended outputs?
+
+- The input is a cherry leaf image and the output is a prediction of whether the cherry leaf is healthy or contains powdery mildew.
+
+### What are the criteria for the performance goal of the predictions?
+
+- We agreed with the client a degree of 97% accuracy.
+
+### How will the client benefit?
+
+- The client will not supply the market with a product of compromised quality.
+
+---
 
 ## Dashboard Design
 
-- List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
-- Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
+### Page 1: Project Summary
+
+- General Information
+- Introduces Farmy and Foods adds a brief explanation as follows from the [RHS website](https://www.rhs.org.uk/disease/powdery-mildews)
+- “Powdery mildews are a group of related fungi which attack a wide range of plants, causing a white, dusty coating on leaves, stems and flowers.”
+-	Powdery mildews are typically identified by biological markers that are visible when observing specific leaves.
+
+### Project Dataset
+
+- The available dataset contains 4208 images split into healthy and powdery mildew specimens the dataset can be found at [kaggle.com](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves)
+- Link to addition information
+- Readme Information can be found on [Github](https://github.com/BeeBeeBethC/PP5-Cherry-Leaves)
+  
+- Business requirements
+- 1 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
+- 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+
+### Page 2: Image Visualizations
+
+- It will answer business requirement 1
+- Checkbox 1 - showing a difference between average and variability images for each class present (healthy or powdery mildew)
+- Checkbox 2 - showing differences between average 'healthy' and average 'powdery mildew' leaves
+- Checkbox 3 - Image Montage for each class with select box to select 'healthy' or 'powdery mildew'
+
+### Page 3: Mildew Detector
+
+- Business requirement 2 information - "The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew."
+- User Interface with a multi-file uploader widget
+- The user is able to upload multiple cherry leaf images. It will display the image below along with a prediction statement, and probability graph indicating if the leaf is healthy or contains powdery mildew.
+- Table with image name and prediction results.
+- Button to download table.
+
+### Page 4: Project Hypothesis and Validation
+
+-	I hypothesize that a Convolutional Neural Network (CNN) based image classifier can accurately distinguish between Healthy and Powdery Mildew-Infected cherry leaves by learning and identifying distinct visual features (biological markers) associated with the powdery mildew infection.
+
+### How to validate?
+
+- To validate this author's hypothesis, a convolutional neural network based image classifier, machine learning model was created and trained as prototype to see if the desired outcome of 97% minimum accuracy was generated.
+- The objective of this project is to develop a machine learning model that can be deployed live to a user friendly web application whilst adhering to the Non-Disclosure Agreement (NDA) that was written up by Farmy and Foods.
+- The main aim of this project was to aid growers and agricultural specialists for early disease detection of powdery mildews in cherry leaves, with potential to branch out to other diseases in the future.
+-	This outlines the scientific hypothesis and project goal driving the machine learning solution generated within this project.
+
+### Page 5: ML Performance Metrics
+
+- Label Frequencies for Train, Validation and Test Sets
+- Model History - Accuracy and Losses
+- Model evaluation result
+
+---
 
 ## Unfixed Bugs
 
 - You will need to mention unfixed bugs and why they were unfixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable for consideration, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+
+---
 
 ## Deployment
 
@@ -92,6 +236,6 @@ This outlines the scientific hypothesis and project goal driving the machine lea
 - The photos used on the home and sign-up page are from This Open-Source site.
 - The images used for the gallery page were taken from this other open-source site.
 
-## Acknowledgements (optional)
+### Acknowledgements
 
 - Thank the people who provided support throughout this project.
