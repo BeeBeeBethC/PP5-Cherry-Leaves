@@ -87,8 +87,7 @@ Powdery mildew detection currently relies on subjective visual inspection under 
 
 - The dataset contains 4208 images which got split into three subsets of data reduced from 256px x 256px to 100px x 100px to accomodate hosting limitations.
 - The training data consists of a curated subset of processed '.PNG' images organized into two classes: “healthy” and “powdery mildew.”
-- The dataset has been augmented and split for training, validation, and testing at ratios of 0.7, 0.15, 0.15 summing up to 1.0.
-- This equates to 2,946 for training subset, 631 for validation subset and 631 for the testing subset.
+- The dataset was been augmented and split for training, validation, and testing at ratios of 0.7, 0.15, 0.15 summing up to 1.0.
 
 ---
 
@@ -195,9 +194,25 @@ Powdery mildew detection currently relies on subjective visual inspection under 
 
 ---
 
-## Unfixed Bugs
+## Project Constraints and Bugs
 
-- You will need to mention unfixed bugs and why they were unfixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable for consideration, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+- Within this project, there is a significant constraint to this project and that is the ever evolving Machine Learning language libraries. These libraries frequently introduce new changes and at the same time deprecate older features.
+
+- As a result of this, The project was developed and tested with the package versions listed in requirements.txt and as such using different versions may lead to compatibility issues in the future.
+
+- whilst no known bugs are present. This author thought they would discuss a few reoccurring issues over the course of the project.
+
+- From the start of the project, this author noticed that on re-running notebooks due to changes occurring within them, duplicate files and images where being produced.
+
+- To combat this and prevent further confusion down the line when delving into the depths of model creation, this author ensured that all notebooks, files and directories were not duplicated or being overwritten. thus keeping the project directory cleaner and easier to navigate through to specific files.
+
+- As a result of the above, by maintaining a clean workspace without overwritten and duplicated files, it ensured that the model was only using clean data and datasets.
+
+- One of these such folders is the versioning file which shows 'v13' in outputs. This author's reasoning for this was to ensure that nothing was being overwritten and kept 'up to date' with the code used throughout the notebooks by retrieving files from this specific folder.
+
+- Another example is cleaning up the outputs at the end of Jupyter Notebook 5, this is to ensure a clean and neat workspace labelled correctly whilst maintaining a non duplicated file system.
+
+- During the final notebook, issue after issue came up with the confusion metrics section. Specifically providing me with the wrong and incorrect metrics. After lots of reviewing it turns out that this author had caused the metrics to use 'batch_size' instead of 'prediction_class' on clear up of this and refined code the confusion metrics worked as expected instead of throwing odd stats such as 47% when other tests stating a ~99% accuracy this author recognised something was a miss and on further test running and model tweaking (as some aspects had depreciated during this model build) the overall accuracy settled at 98%.
 
 ---
 
@@ -218,7 +233,23 @@ Powdery mildew detection currently relies on subjective visual inspection under 
 
 ## Main Data Analysis and Machine Learning Libraries
 
-- Here, you should list the libraries used in the project and provide an example(s) of how you used these libraries.
+- Python - general purpose programming language, used in Data science and Machine Learning.
+- Jupyter Notebooks - Allows users to combine code, output, visualizations, and narrative text in a single document.
+- Git - version control.
+- Github Codespaces - cloud-based development environment.
+- Github - Stores the project repository.
+- NumPy - For numerical computations and array operations.
+- Pandas - For data manipulation and analysis, handling CSV files.
+- Scikit-learn - For machine learning utilities and metrics.
+- Matplotlib - Basic plotting library to create static
+visualizations.
+- Seaborn - Statistical data visualization built on matplotlib.
+- Plotly - For interactive visualizations.
+- Pillow - For image processing and manipulation.
+- Tensorflow - Deep learning framework.
+- Keras - High-level neural network API.
+- Streamlit - For creating the web interface/dashboard.
+- Joblib - For saving/loading machine learning models.
 
 ## Credits
 
