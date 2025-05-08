@@ -1,68 +1,44 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-## Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for the Cherry Leaves project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-1. In your newly created repo click on the green Code button. 
-
-1. Then, from the Codespaces tab, click Create codespace on main.
-
-1. Wait for the workspace to open. This can take a few minutes.
-
-1. Open a new terminal and `pip3 install -r requirements.txt`
-
-1. Open the jupyter_notebooks directory, and click on the notebook you want to open.
-
-1. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.12.1 as it inherits from the workspace, so it will be Python-3.12.1 as installed by Codespaces. To confirm this, you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, then you can create a new one with _Regenerate API Key_.
+# Portfolio Project 5 - Mildew Detection in Cherry Leaves
 
 ## Dataset Content
 
-- The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
+**Important Note**: Farmy and Foods is a ficticious, hypothetical agricultural company. Created to fulfill the requirements of **Specialisation Project - Portfolio Project 5 - Predictive Analytics** where predictive analytics can be applied in a real project in the workplace.for Code Institute.
+
+- The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves).
+
 - The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
 ## Business Requirements
 
-The cherry plantation crop from Farmy & Foods is facing a challenge where their cherry plantations have been presenting powdery mildew. Currently, the process is manual verification if a given cherry tree contains powdery mildew. An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If there is powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute. The company has thousands of cherry trees located on multiple farms across the country. As a result, this manual process is not scalable due to the time spent in the manual process inspection.
+The cherry plantation crop from Farmy & Foods is facing a challenge where their cherry plantations have been presenting powdery mildew. Currently, the process is manual verification if a given cherry tree contains powdery mildew.
 
-To save time in this process, the IT team suggested an ML system that detects instantly, using a leaf tree image, if it is healthy or has powdery mildew. A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project for all other crops. The dataset is a collection of cherry leaf images provided by Farmy & Foods, taken from their crops.
+An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If there is powdery mildew present, the employee applies a specific compound to kill the fungus.
+
+The time spent applying this compound is 1 minute. The company has thousands of cherry trees located on multiple farms across the country. As a result, this manual process is not scalable due to the time spent in the manual process inspection.
+
+To save time in this process, the IT team suggested an Machine Learning system that detects instantly, using a leaf tree image, if it is healthy or has powdery mildew.
+
+A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project for all other crops. The dataset is a collection of cherry leaf images provided by Farmy & Foods, taken from their crops and a Non Disclosure Agreement (NDA) in place.
 
 - 1 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
+
 - 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
-## Hypothesis and how to validate?
+## Hypothesis
 
-- List here your project hypothesis(es) and how you envision validating it (them).
-Objective
-The objective of this project is to develop a machine learning model that:
-  - Can be deployed in a user-friendly web app
-  - Accurately classifies uploaded cherry leaf images as **healthy**
-          or **infected**
-  - Assists growers and agricultural specialists with
-          **early disease detection**
-    This outlines the scientific hypothesis and project goal driving the machine learning solution.
+The author's hypothesis for this project is as follows:
+
+I hypothesize that a **Convolutional Neural Network (CNN)** based image classifier can accurately distinguish between **Healthy** and **Powdery Mildew-Infected** cherry leaves by learning and identifying **distinct visual features** (biological markers) associated with the powdery mildew infection.
+
+## How to validate?
+
+To validate this author's hypothesis, a convolutional neural network based image classifier, machine learning model was created and trained as prototype to see if the desired outcome of 97% minimum accuracy was generated.
+
+The objective of this project is to develop a machine learning model that can be deployed live to a user friendly web application whilst adhering to the Non-Disclosure Agreement (NDA) that was written up by Farmy and Foods.
+
+To adhere to the NDA, only a small sample of images are available for use of supporting evidence. The main aim of this project was to aid growers and agricultural specialists for early disease detection of powdery mildews in cherry leaves, with potential to branch out to other diseases in the future.
+
+This outlines the scientific hypothesis and project goal driving the machine learning solution generated within this project.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
