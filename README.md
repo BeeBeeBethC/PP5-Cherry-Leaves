@@ -141,6 +141,106 @@ Powdery mildew detection currently relies on subjective visual inspection under 
 
 ---
 
+### Epics and User Stories
+
+**Epic 1 - Information Gathering and Data Collection.**
+
+USER STORY
+
+- As a Developer I can gather information so that I can perform a data collection.
+
+Acceptance Criteria:
+
+- Criteria one: Source information from the client to retrieve information.
+- Criteria two: Source dataset from online data hosting platform.
+- Criteria three: Download the dataset.
+
+Tasks:
+
+- Retrieve and review the business case document.
+- Generate hypothesis.
+- Locate data source from online hosting platform (Kaggle).
+- Download and extract dataset in code space.
+
+**Epic 2 - Data Visualization, Cleaning, and Preparation.**
+
+USER STORY
+
+- As a Developer I can Visualise Data Collection so that I can determine what data I'm working with.
+
+Acceptance Criteria:
+
+- Criteria one: visualise the data
+- Criteria two: clean the data
+- Criteria three: preparation of the data.
+- Criteria four: generate an image montage
+
+Tasks:
+
+- Generate a sample image that shows what the original sized images are.
+- Reduce the image size to 100px x 100px for smoother analysis
+- Split the datasets into three subsets subsequently named Train, Validation and Test datasets.
+- Augment data so that the sample size is large enough.
+- Generate an image montage to satisfy business requirement one.
+
+**Epic 3 - Model training, optimization and validation.**
+
+USER STORY:
+
+As a Developer I can Create a Machine Learning Model so that I can transform the analysis process from 30 minutes to merely seconds.
+
+Acceptance Criteria:
+
+- criteria one: generate a model.
+- criteria two: train the model.
+- criteria three: optimise the model.
+- criteria four: validate the model.
+
+Tasks:
+
+- generate a model to aid in the analysis process.
+- train the model using the train and validation datasets.
+- optimise the model to gain the highest possible accuracy with minimum of 97% accurate.
+- validate the model by using the test dataset and testing the model on "unseen" data.
+
+**Epic 4 – Dashboard planning, designing, and development.**
+
+USER STORY:
+
+As a Developer I can Create an interactive dashboard so that the client can review findings.
+
+Acceptance Criteria:
+
+-	Criteria one: Plan a multi-page dashboard.
+-	Criteria two: Design and create a multi-page dashboard
+-	Criteria three: Develop a multi-page dashboard
+
+Tasks:
+
+-	Plan out the multi-page dashboard
+-	Generate a dashboard design document
+-	Create a multi-page dashboard using Python and Streamlit
+-	Develop the multi-page dashboard
+
+**Epic 5 - Dashboard Deployment and Release.**
+
+USER STORY:
+
+As a Developer I can deploy the dashboard so that I can review my findings in a user friendly way.
+
+Acceptance Criteria:
+
+-	Criteria one: deploy the dashboard using Streamlit and Heroku
+-	Criteria two: release the dashboard with only essential sections to comply with the NDA agreement
+
+Tasks:
+
+-	Deploy the dashboard to Heroku
+-	Move files that need to be hidden to   `.gitignore` and `.slugignore`.
+-	Release only essential items on the dashboard that relate directly from findings ensuring that data protection is followed as stated in the Non-Disclosure Agreement was written up from the very start of the project.
+
+---
+
 ## Dashboard Design
 
 ### Page 1: Project Summary
@@ -272,6 +372,20 @@ visualizations.
 - Code Institute's Slack Hub - Used for moral support and to be able to work through known bugs such as those on deployment to heroku and image sizing, also src folders and defining issues.
 - Code from above sources was reviewed and adapted to suit the requirements of this author's project.
 
+### Author's Note
+
+This author has been through an incredible learning journey which I am extremely grateful to have had the privilage to complete.
+
+Portfolio Project 5 has been challenging yet so rewarding. Overall, this author has thoroughly enjoyed every aspect of building a machine learning model from conception to completion.
+
 ### Acknowledgements
 
-- Thank the people who provided support throughout this project.
+First and foremost a huge Thank You to Luke Buchanan, my mentor, who has been exceptional not only throughout this project but throughout all my past projects.
+
+To all the Staff and Assessors at Code Institute and Awarding Bodies.
+
+To all my fellow peers particularly George Small who has continued to support throughout the course.
+
+To my family and my wonderful partner who have been an invaluable support network throughout this past year of learning.
+
+Thank You all for your support.
