@@ -208,11 +208,13 @@ Powdery mildew detection currently relies on subjective visual inspection under 
 
 - As a result of the above, by maintaining a clean workspace without overwritten and duplicated files, it ensured that the model was only using clean data and datasets.
 
-- One of these such folders is the versioning file which shows 'v13' in outputs. This author's reasoning for this was to ensure that nothing was being overwritten and kept 'up to date' with the code used throughout the notebooks by retrieving files from this specific folder.
+- One of these such folders is the versioning file which shows 'v13' in outputs. This author's reasoning for this was to ensure that nothing was being overwritten and kept 'up to date' with the code used throughout the notebooks by creating an automatic version control which essentially retrieves files from all previous version folders and automatically moving them to the current versioning folder.
 
-- Another example is cleaning up the outputs at the end of Jupyter Notebook 5, this is to ensure a clean and neat workspace labelled correctly whilst maintaining a non duplicated file system.
+- Another example is cleaning up the outputs at the end of Jupyter Notebook 5, this is to ensure a clean and neat workspace labelled correctly whilst maintaining a non-duplicated file system.
 
-- During the final notebook, issue after issue came up with the confusion metrics section. Specifically providing me with the wrong and incorrect metrics. After lots of reviewing it turns out that this author had caused the metrics to use 'batch_size' instead of 'prediction_class' on clear up of this and refined code the confusion metrics worked as expected instead of throwing odd stats such as 47% when other tests stating a ~99% accuracy this author recognised something was a miss and on further test running and model tweaking (as some aspects had depreciated during this model build) the overall accuracy settled at 98%.
+- During the final notebook, issue after issue came up with the confusion metrics section. Specifically providing this author with the wrong and incorrect metrics.
+
+- After lots of reviewing it turns out that this author had caused the metrics to use 'batch_size' instead of 'prediction_class' on clear up of this and refining code the confusion metrics worked as expected instead of throwing odd stats such as 47% when other tests stating a ~99% accuracy this author recognised something was a miss and on further test running and model tuning (as some library commands had depreciated during this model build) the overall accuracy settled at 98%.
 
 ---
 
@@ -253,19 +255,22 @@ visualizations.
 
 ## Credits
 
-- In this section, you need to reference where you got your content, media and from where you got extra help. It is common practice to use code from other repositories and tutorials. However, it is necessary to be very specific about these sources to avoid plagiarism.
-- You can break the credits section up into Content and Media, depending on what you have included in your project.
-
 ### Content
 
-- The text for the Home page was taken from Wikipedia Article A.
-- Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/).
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site.
-- The images used for the gallery page were taken from this other open-source site.
+- [RHS Website](https://www.rhs.org.uk/disease/powdery-mildews) - providing the text for the project summary page.
+- [Streamlit's Official Youtube Channel](https://www.youtube.com/@streamlitofficial)  - used for better clarity and understanding
+- [Streamlit Official Docs](https://docs.streamlit.io/) - used for information on streamlit web app build.
+- [Streamlit Emoji Shortcodes](https://share.streamlit.io/streamlit/emoji-shortcodes) - provided the shortcode for the icon in the tabs bar.
+- [Tech with Tim](https://www.youtube.com/watch?v=o8p7uQCGD0U&t=755s) was really helpful in understanding the principles and concepts of creating a streamlit app.
+- [IBM's Nicholas Renotte](https://www.youtube.com/watch?v=jztwpsIzEGc&t=36s) gave this author a better perspective on how to create an image classifier using Convolutional Neural Network application, source code for this project included in the video can be found [here](https://github.com/nicknochnack/ImageClassification)
+- [Chanin Nantasenamat aka DataProfessor](https://www.youtube.com/@DataProfessor) youtube channel helped this author clarify and understand streamlit. link to DataProfessor's [Github](https://github.com/dataprofessor/) can be found for various projects.
+- [Walkthrough Project - 1](https://github.com/Code-Institute-Solutions/WalkthroughProject01) - used for some sections of code throughout the Mildew Detection notebooks
+- [Walkthrough Project - 2](https://github.com/Code-Institute-Solutions/churnometer#readme) - used as guidance initially to get a blank multipage app placeholder online and hosted in heroku. also used for readme layout.
+- [Idamariesofie - PP5 Project](https://github.com/idamariasofie/mildew-detection) for guidance on app_pages layout, some code used and adapted and to gain a better initial understanding of what Portfolio Project 5 entails.
+- [linx02 - Gender Prediction Project](https://github.com/linx02/image-classifier-cnn/tree/main) - Code used to generate `.CSV` files.
+- [Stack Overflow](https://stackoverflow.com/questions/78996520/import-tensorflow-keras-preprocessing-image-could-not-be-resolvedpylancereport) - used for reworking Pylance error.
+- Code Institute's Slack Hub - Used for moral support and to be able to work through known bugs such as those on deployment to heroku and image sizing, also src folders and defining issues.
+- Code from above sources was reviewed and adapted to suit the requirements of this author's project.
 
 ### Acknowledgements
 
