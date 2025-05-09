@@ -28,7 +28,7 @@
   * [Author's Note](#authors-note)
   * [Acknowledgements](#acknowledgements)
 
-[🔝 Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -40,7 +40,7 @@ In the real world, specifically in relation to the Non-Disclosure Agreement. Thi
 
 However for assessment purposes this portfolio project is in a public repository.
 
-[🔝 Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -52,7 +52,7 @@ However for assessment purposes this portfolio project is in a public repository
   
 * The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species.
 
-[🔝 Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -72,7 +72,7 @@ A similar manual process is in place for other crops for detecting pests, and if
 
 * 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
-[🔝 Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -92,7 +92,7 @@ To adhere to the NDA, only a small sample of images are available for use of sup
 
 This outlines the scientific hypothesis and project goal driving the machine learning solution generated within this project.
 
-[🔝 Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -127,7 +127,7 @@ Deploy a real-time prediction system via a Streamlit-based web application. User
 * The training data consists of a curated subset of processed '.PNG' images organized into two classes: “healthy” and “powdery mildew.”
 * The dataset was been augmented and split for training, validation, and testing at ratios of 0.7, 0.15, 0.15 summing up to 1.0.
 
-[Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -179,7 +179,7 @@ Deploy a real-time prediction system via a Streamlit-based web application. User
 
 * The client will not supply the market with a product of compromised quality.
 
-[Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -281,7 +281,7 @@ Tasks:
 * Move files that need to be hidden to   `.gitignore` and `.slugignore`.
 * Release only essential items on the dashboard that relate directly from findings ensuring that data protection is followed as stated in the Non-Disclosure Agreement was written up from the very start of the project.
 
-[Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -336,7 +336,7 @@ Tasks:
 * Model History - Accuracy and Losses
 * Model evaluation result
 
-[Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -362,7 +362,7 @@ Tasks:
 
 * After lots of reviewing it turns out that this author had caused the metrics to use 'batch_size' instead of 'prediction_class' on clear up of this and refining code the confusion metrics worked as expected instead of throwing odd stats such as 47% when other tests stating a ~99% accuracy this author recognised something was a miss and on further test running and model tuning (as some library commands had depreciated during this model build) the overall accuracy settled at 98%.
 
-[Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -381,7 +381,7 @@ Tasks:
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 6. If the slug size is too large, then add large files not required for the app to the .slugignore file.
 
-[Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -405,7 +405,7 @@ visualizations.
 * Streamlit - For creating the web interface/dashboard.
 * Joblib - For saving/loading machine learning models.
 
-[Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -428,7 +428,7 @@ visualizations.
 * Code Institute's Slack Hub - Used for moral support and to be able to work through known bugs such as those on deployment to heroku and image sizing, also src folders and defining issues.
 * Code from above sources was reviewed and adapted to suit the requirements of this author's project.
 
-[Back to Top](#contents)
+[Top](#contents)
 
 ---
 
@@ -450,6 +450,6 @@ To my family and my wonderful partner who have been an invaluable support networ
 
 Thank You all for your support.
 
-[Back to Top](#contents)
+[Top](#contents)
 
 ---
