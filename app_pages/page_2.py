@@ -26,7 +26,10 @@ def page2_body():
         avg_healthy_path = f"outputs/figures/avg_var_healthy.png"
         avg_powdery_path = f"outputs/figures/avg_var_powdery_mildew.png"
 
-        if os.path.exists(avg_healthy_path) and os.path.exists(avg_powdery_path):
+        if (
+            os.path.exists(avg_healthy_path)
+            and os.path.exists(avg_powdery_path)
+        ):
             avg_healthy = plt.imread(avg_healthy_path)
             avg_powdery_mildew = plt.imread(avg_powdery_path)
 

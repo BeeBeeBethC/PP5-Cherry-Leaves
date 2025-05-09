@@ -46,15 +46,15 @@ def page5_body():
 
     st.markdown("""
                 AUC: 0.9984
-                The AUC (Area Under the Curve) score indicates the model's 
-                ability to distinguish between the two classes. 
+                The AUC (Area Under the Curve) score indicates the model's
+                ability to distinguish between the two classes.
                 An AUC closer to 1.0 signifies excellent performance.
     """)
 
     # Sample Predictions on Unseen Data
     st.header("Sample Predictions on Unseen Data")
     st.markdown("""
-    Below is a sample batch of images along with predictions to see how the 
+    Below is a sample batch of images along with predictions to see how the
     model would perform on unseen data.
     """)
     sample_img_path = "outputs/figures/sample_predictions.png"
@@ -64,7 +64,9 @@ def page5_body():
     else:
         st.info("Sample prediction images not yet available _Coming soon..._")
 
-    st.success(f"Overall, the model is highly accurate (98% acccuracy) with \n"
-               f"very few misclassifications, and it performs well in \n"
-               f"distinguishing between healthy and powdery mildew leaves \n"
-               f"on unseen data.")
+    st.success("""
+    Overall, the model is highly accurate (98% acccuracy) with
+            very few misclassifications, and it performs well when
+            distinguishing between healthy and powdery mildew leaves
+            on unseen data.
+            """)
