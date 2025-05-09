@@ -1,7 +1,8 @@
 import streamlit as st
 st.set_page_config(
     page_title="Mildew Detection in Cherry Leaves",
-    layout="wide"
+    layout="wide",
+    page_icon=":fallen_leaf:"
 )
 
 st.title("Mildew Detection in Cherry Leaves")
