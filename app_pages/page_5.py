@@ -8,7 +8,7 @@ def page5_body():
     st.title("Model Evaluation Metrics")
     st.markdown("---")
 
-    st.markdown("Label Frequencies for Train, Validation and Test Datasets")
+    st.markdown("### Label Frequencies for Train, Validation and Test Datasets")
     freq_path =f"outputs/figures/labels_distribution.png"
     if os.path.exists(freq_path):
         freq_img = Image.open(freq_path)
