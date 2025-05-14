@@ -358,9 +358,11 @@ Tasks:
 
 * Another example is cleaning up the outputs at the end of Jupyter Notebook 5, this is to ensure a clean and neat workspace labelled correctly whilst maintaining a non-duplicated file system.
 
-* During the final notebook, issue after issue came up with the confusion metrics section. Specifically providing this author with the wrong and incorrect metrics.
+* During the final notebook, issue after issue came up with the confusion matrix section. Specifically providing this author with the wrong and incorrect metrics.
 
-* After lots of reviewing it turns out that this author had caused the metrics to use 'batch_size' instead of 'prediction_class' on clear up of this and refining code the confusion metrics worked as expected instead of throwing odd stats such as 47% when other tests stating a ~99% accuracy this author recognised something was a miss and on further test running and model tuning (as some library commands had depreciated during this model build) the overall accuracy settled at 98%.
+* After lots of reviewing it turns out that this author had caused the metrics to use 'batch_size' instead of 'prediction_class' on clear up of this and refining code the confusion matrix worked as expected instead of throwing odd stats such as 47% when other tests stating a ~99% accuracy. This author recognised something was a miss and on further test running and model tuning (as some library commands had depreciated during this model build) the overall accuracy settled at 98%.
+
+* When deploying, walkthrough - 2 was invaluable when deploying to Heroku, specifically getting a blank page application to host made it more straightforward to hosting my own project.
 
 [Top](#contents)
 
